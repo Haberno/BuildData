@@ -12,16 +12,16 @@ AttributeBase getDefaultValue ()D getDefaultValue
 AttributeBase isClientSyncable ()Z isClientSyncable
 AttributeBase a (Z)LAttributeBase; setSyncable
 AttributeBase getParentAttribute ()LIAttribute; getParentAttribute
-AttributeInstance getAttribute ()LIAttribute; getAttribute
+AttributeInstance a ()LIAttribute; getAttribute
 AttributeInstance b ()D getBaseValue
-AttributeInstance setBaseValue (D)V setBaseValue
+AttributeInstance a (D)V setBaseValue
 AttributeInstance a (I)Ljava/util/Collection; getModifiers
 AttributeInstance c ()Ljava/util/Collection; getModifiers
 AttributeInstance a (LAttributeModifier;)Z hasModifier
 AttributeInstance a (Ljava/util/UUID;)LAttributeModifier; getModifier
 AttributeInstance b (LAttributeModifier;)V addModifier
 AttributeInstance c (LAttributeModifier;)V removeModifier
-AttributeInstance getValue ()D getValue
+AttributeInstance e ()D getValue
 AttributeMapBase a attributesByObject
 AttributeMapBase b attributesByName
 AttributeMapBase c descendantsByParent
@@ -83,11 +83,11 @@ AttributeRanged a (Ljava/lang/String;)LAttributeRanged; importLegacyName
 AttributeRanged g ()Ljava/lang/String; getImportLegacyName
 AttributeRanged sanitizeValue (D)D sanitizeValue
 GenericAttributes f LOGGER
-GenericAttributes j MAX_HEALTH
-GenericAttributes FOLLOW_RANGE FOLLOW_RANGE
+GenericAttributes a maxHealth
+GenericAttributes b FOLLOW_RANGE
 GenericAttributes c KNOCKBACK_RESISTANCE
-GenericAttributes MOVEMENT_SPEED MOVEMENT_SPEED
-GenericAttributes ATTACK_DAMAGE ATTACK_DAMAGE
+GenericAttributes d MOVEMENT_SPEED
+GenericAttributes e ATTACK_DAMAGE
 GenericAttributes a (LAttributeMapBase;)LNBTTagList; saveAttributes
 GenericAttributes a (LAttributeInstance;)LNBTTagCompound; saveAttribute
 GenericAttributes a (LAttributeModifier;)LNBTTagCompound; saveAttributeModifier
