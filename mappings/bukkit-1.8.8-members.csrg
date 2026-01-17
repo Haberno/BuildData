@@ -1,5 +1,5 @@
 AttributeInstance a ()LIAttribute; getAttribute
-AttributeInstance a (D)V setValue
+AttributeInstance a (D)V setBaseValue
 AttributeInstance e ()D getValue
 AttributeMapServer b ()Ljava/util/Set; getAttributes
 AxisAlignedBB b (DDD)LAxisAlignedBB; grow
