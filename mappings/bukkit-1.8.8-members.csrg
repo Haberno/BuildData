@@ -3,11 +3,15 @@ IAttribute a (D)D sanitizeValue
 IAttribute b ()D getDefaultValue
 IAttribute c ()Z isClientSyncable
 IAttribute d ()LIAttribute; getParentAttribute
-AttributeBase a LIAttribute; parent
-AttributeBase b Ljava/lang/String; name
-AttributeBase c D defaultValue
-AttributeBase d Z syncable
+AttributeBase a parent
+AttributeBase b name
+AttributeBase c defaultValue
+AttributeBase d syncable
+AttributeBase getName ()Ljava/lang/String; getName
+AttributeBase getDefaultValue ()D getDefaultValue
+AttributeBase isClientSyncable ()Z isClientSyncable
 AttributeBase a (Z)LAttributeBase; setSyncable
+AttributeBase getParentAttribute ()LIAttribute; getParentAttribute
 AttributeInstance getAttribute ()LIAttribute; getAttribute
 AttributeInstance b ()D getBaseValue
 AttributeInstance setBaseValue (D)V setBaseValue
@@ -18,9 +22,9 @@ AttributeInstance a (Ljava/util/UUID;)LAttributeModifier; getModifier
 AttributeInstance b (LAttributeModifier;)V addModifier
 AttributeInstance c (LAttributeModifier;)V removeModifier
 AttributeInstance getValue ()D getValue
-AttributeMapBase a Ljava/util/Map; attributesByObject
-AttributeMapBase b Ljava/util/Map; attributesByName
-AttributeMapBase c Lcom/google/common/collect/Multimap; descendantsByParent
+AttributeMapBase a attributesByObject
+AttributeMapBase b attributesByName
+AttributeMapBase c descendantsByParent
 AttributeMapBase a (LIAttribute;)LAttributeInstance; getInstance
 AttributeMapBase a (Ljava/lang/String;)LAttributeInstance; getInstance
 AttributeMapBase b (LIAttribute;)LAttributeInstance; registerAttribute
@@ -29,46 +33,61 @@ AttributeMapBase a ()Ljava/util/Collection; getAttributes
 AttributeMapBase a (LAttributeInstance;)V onAttributeModified
 AttributeMapBase a (Lcom/google/common/collect/Multimap;)V removeAttributeModifiers
 AttributeMapBase b (Lcom/google/common/collect/Multimap;)V addAttributeModifiers
-AttributeMapServer e Ljava/util/Set; dirtyAttributes
-AttributeMapServer d Ljava/util/Map; attributesByLegacy
+AttributeMapServer e dirtyAttributes
+AttributeMapServer d attributesByLegacy
 AttributeMapServer e (LIAttribute;)LAttributeModifiable; getInstance
 AttributeMapServer b (Ljava/lang/String;)LAttributeModifiable; getInstance
+AttributeMapServer b (LIAttribute;)LAttributeInstance; registerAttribute
+AttributeMapServer c (LIAttribute;)LAttributeInstance; createAttributeInstance
+AttributeMapServer a (LAttributeInstance;)V onAttributeModified
 AttributeMapServer getAttributes ()Ljava/util/Set; getDirtyAttributes
 AttributeMapServer c ()Ljava/util/Collection; getSyncableAttributes
-AttributeModifiable a LAttributeMapBase; attributeMap
-AttributeModifiable b LIAttribute; attribute
-AttributeModifiable c Ljava/util/Map; modifiers
-AttributeModifiable d Ljava/util/Map; modifiersByName
-AttributeModifiable e Ljava/util/Map; modifierById
-AttributeModifiable f D baseValue
-AttributeModifiable g Z dirty
-AttributeModifiable h D cachedValue
+AttributeMapServer a (Ljava/lang/String;)LAttributeInstance; getInstance
+AttributeMapServer a (LIAttribute;)LAttributeInstance; getInstance
+AttributeModifiable a attributeMap
+AttributeModifiable b attribute
+AttributeModifiable c modifiers
+AttributeModifiable d modifiersByName
+AttributeModifiable e modifierById
+AttributeModifiable f baseValue
+AttributeModifiable g dirty
+AttributeModifiable h cachedValue
+AttributeModifiable getAttribute ()LIAttribute; getAttribute
+AttributeModifiable b ()D getBaseValue
+AttributeModifiable setBaseValue (D)V setBaseValue
+AttributeModifiable a (I)Ljava/util/Collection; getModifiers
+AttributeModifiable c ()Ljava/util/Collection; getModifiers
+AttributeModifiable a (Ljava/util/UUID;)LAttributeModifier; getModifier
+AttributeModifiable a (LAttributeModifier;)Z hasModifier
+AttributeModifiable b (LAttributeModifier;)V addModifier
 AttributeModifiable f ()V setDirty
+AttributeModifiable c (LAttributeModifier;)V removeModifier
+AttributeModifiable getValue ()D getValue
 AttributeModifiable g ()D calculateValue
 AttributeModifiable b (I)Ljava/util/Collection; getAppliedModifiers
-AttributeModifier a D amount
-AttributeModifier b I operation
-AttributeModifier c Ljava/lang/String; name
-AttributeModifier d Ljava/util/UUID; id
-AttributeModifier e Z serialize
+AttributeModifier a amount
+AttributeModifier b operation
+AttributeModifier c name
+AttributeModifier d id
+AttributeModifier e serialize
 AttributeModifier a ()Ljava/util/UUID; getId
 AttributeModifier b ()Ljava/lang/String; getName
 AttributeModifier c ()I getOperation
 AttributeModifier d ()D getAmount
 AttributeModifier e ()Z isSerializable
 AttributeModifier a (Z)LAttributeModifier; setSerialize
-AttributeRanged a D minValue
-AttributeRanged b D maxValue
-AttributeRanged c Ljava/lang/String; importLegacyName
+AttributeRanged a minValue
+AttributeRanged b maxValue
+AttributeRanged c importLegacyName
 AttributeRanged a (Ljava/lang/String;)LAttributeRanged; importLegacyName
 AttributeRanged g ()Ljava/lang/String; getImportLegacyName
 AttributeRanged sanitizeValue (D)D sanitizeValue
-GenericAttributes f Lorg/apache/logging/log4j/Logger; LOGGER
-GenericAttributes maxHealth LIAttribute; MAX_HEALTH
-GenericAttributes FOLLOW_RANGE LIAttribute; FOLLOW_RANGE
-GenericAttributes c LIAttribute; KNOCKBACK_RESISTANCE
-GenericAttributes MOVEMENT_SPEED LIAttribute; MOVEMENT_SPEED
-GenericAttributes ATTACK_DAMAGE LIAttribute; ATTACK_DAMAGE
+GenericAttributes f LOGGER
+GenericAttributes j MAX_HEALTH
+GenericAttributes FOLLOW_RANGE FOLLOW_RANGE
+GenericAttributes c KNOCKBACK_RESISTANCE
+GenericAttributes MOVEMENT_SPEED MOVEMENT_SPEED
+GenericAttributes ATTACK_DAMAGE ATTACK_DAMAGE
 GenericAttributes a (LAttributeMapBase;)LNBTTagList; saveAttributes
 GenericAttributes a (LAttributeInstance;)LNBTTagCompound; saveAttribute
 GenericAttributes a (LAttributeModifier;)LNBTTagCompound; saveAttributeModifier
